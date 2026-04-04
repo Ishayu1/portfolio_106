@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 const NavBar = () => {
@@ -9,8 +10,14 @@ const NavBar = () => {
 
   return (
     <nav className="mt-4 flex flex-wrap items-center justify-between gap-4 sm:mt-6 md:mt-8">
-      <div className="flex min-w-0 flex-shrink-0 items-center">
+      <div className="flex min-w-0 flex-shrink-0 items-center gap-6 sm:gap-8">
         <h1 className="text-3xl font-normal tracking-tight sm:text-4xl md:text-5xl">IG</h1>
+        <Link
+          to="/contact"
+          className="text-sm text-cyan-400 transition-colors hover:underline sm:text-base"
+        >
+          Contact
+        </Link>
       </div>
       <div className="flex flex-shrink-0 items-center justify-center gap-3 text-xl sm:gap-4 sm:text-2xl md:m-4 lg:m-8">
         {socialLinks.map(({ icon, url, label }, index) => (

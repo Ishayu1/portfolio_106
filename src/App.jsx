@@ -5,6 +5,7 @@ import CounterGame from "./components/CounterGame";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Experiences from "./components/Experiences";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const MainApp = () => {
             </>
           } />
           <Route path="/CounterGame" element={<CounterGame />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
     </div>
