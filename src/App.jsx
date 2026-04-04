@@ -7,13 +7,9 @@ import Experiences from "./components/Experiences";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
-// Must match Vite `base` (e.g. /portfolio_106/ on GitHub project Pages) or routes won’t match → blank page.
-const routerBasename =
-  import.meta.env.BASE_URL.replace(/\/$/, "") || "/";
-
 const App = () => {
   return (
-    <Router basename={routerBasename}>
+    <Router>
       <MainApp />
     </Router>
   );
