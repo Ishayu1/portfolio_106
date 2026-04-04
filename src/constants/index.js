@@ -70,11 +70,10 @@ export const PROJECTS = [
     description:
       "Developed multiple data science projects, including car price prediction using Scikit-learn, COVID-19 statistical analysis software, and a life expectancy prediction model based on population data.",
     technologies: ["Scikit-learn", "Python", "Data Science", "Machine Learning"],
-    // link: "https://github.com/Ishayu1/"
   },
   {
     title: "Dubai College Cricket Scoring Web App",
-    image: cricket, // Replace with actual image variable if applicable
+    image: cricket,
     description:
       "Developed a website for online cricket scoring and data analytics using Flask, Pandas, NumPy, and Matplotlib. The website replaces the school's current system, allowing teams to store match results and analyze performance.",
     technologies: ["Flask","SQL","CSS","Javascript","Pandas", "NumPy", "Matplotlib"],

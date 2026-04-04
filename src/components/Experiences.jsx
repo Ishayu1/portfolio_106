@@ -15,7 +15,6 @@ const Experiences = () => {
       </motion.h1>
 
       <div className="relative mx-auto max-w-5xl">
-        {/* Single continuous spine — aligned with dot column (center of w-5 ≈ left-2.5) */}
         <div
           aria-hidden
           className="pointer-events-none absolute bottom-6 right-0 top-6 hidden w-44 lg:block"
@@ -29,7 +28,6 @@ const Experiences = () => {
               key={`${experience.role}-${experience.company}`}
               className="flex flex-col gap-3 lg:flex-row lg:items-start lg:gap-12"
             >
-              {/* Content — always left-aligned */}
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -62,7 +60,6 @@ const Experiences = () => {
                 </div>
               </motion.div>
 
-              {/* Timeline: [dot on spine] | [year — entirely to the right of the line] */}
               <div className="hidden w-44 shrink-0 flex-row items-start gap-0 lg:flex">
                 <div className="relative flex w-5 shrink-0 justify-center pt-1">
                   <div className="relative z-10 h-3.5 w-3.5 shrink-0 rounded-full border-2 border-cyan-400 bg-neutral-950 shadow-[0_0_14px_rgba(34,211,238,0.35)]" />

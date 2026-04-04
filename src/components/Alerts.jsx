@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types -- small presentational component */
+/* eslint-disable react/prop-types */
 const Alerts = ({ children, onClose }) => {
   return (
     <div className="fixed inset-x-4 top-20 z-50 mx-auto flex max-w-lg items-center justify-between rounded-2xl border-b-2 border-yellow-500 bg-yellow-100 px-4 py-3 text-yellow-800 shadow-md sm:inset-x-auto sm:left-1/2 sm:top-24 sm:w-full sm:max-w-xl sm:-translate-x-1/2 sm:px-6 sm:py-4">

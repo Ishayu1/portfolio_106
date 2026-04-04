@@ -11,45 +11,38 @@ const container = (delay) => ({
 const Hero = () => {
   const labs = useMemo(() => ["Problem Solver", "Builder", "Engineer"], []);
 
-  // display text + FSM state
-  const [labIdx, setLabIdx] = useState(0);         // which word
-  const [text, setText] = useState("");            // currently shown substring
+  const [labIdx, setLabIdx] = useState(0);
+  const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  // timings (tweak to taste)
-  const TYPE_SPEED = 80;        // ms per char when typing
-  const DELETE_SPEED = 50;      // ms per char when deleting
-  const PAUSE_AT_FULL = 900;    // ms pause when a word completes
-  const PAUSE_AT_EMPTY = 1500;   // ms pause before next word starts
+  const TYPE_SPEED = 80;
+  const DELETE_SPEED = 50;
+  const PAUSE_AT_FULL = 900;
+  const PAUSE_AT_EMPTY = 1500;
 
   useEffect(() => {
     const full = labs[labIdx];
     let timeout = TYPE_SPEED;
 
     if (!isDeleting && text === full) {
-      // finished typing → short pause then start deleting
       timeout = PAUSE_AT_FULL;
     } else if (isDeleting && text === "") {
-      // finished deleting → move to next word and start typing
       timeout = PAUSE_AT_EMPTY;
     } else {
-      // normal step timing
       timeout = isDeleting ? DELETE_SPEED : TYPE_SPEED;
     }
 
     const id = setTimeout(() => {
       if (!isDeleting) {
-        // typing forward
         if (text === full) {
-          setIsDeleting(true);          // flip to deleting on next tick
+          setIsDeleting(true);
         } else {
           setText(full.slice(0, text.length + 1));
         }
       } else {
-        // deleting backward
         if (text === "") {
           setIsDeleting(false);
-          setLabIdx((i) => (i + 1) % labs.length); // next word
+          setLabIdx((i) => (i + 1) % labs.length);
         } else {
           setText(full.slice(0, text.length - 1));
         }
@@ -73,7 +66,6 @@ const Hero = () => {
               Ishayu Ghosh
             </motion.h1>
 
-            {/* This is where the typewriter text appears */}
             <div className="flex w-full max-w-full flex-row flex-wrap justify-center lg:justify-start">
               <motion.span
                 variants={container(0.25)}

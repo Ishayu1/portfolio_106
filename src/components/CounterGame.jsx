@@ -9,8 +9,8 @@ const CounterGame = () => {
   const [name, set_name] = useState("");
   const [show_name, set_show_name] = useState("");
   const [submitted_name, set_submitted_name] = useState(false);
-  const [players, set_players] = useState({}); // Stores all players and their scores
-  const [player_rounds, set_player_rounds] = useState([]); // Stores rounds for current player
+  const [players, set_players] = useState({});
+  const [player_rounds, set_player_rounds] = useState([]);
   const [game_status, set_game_status] = useState(false);
   const [round_active, set_round_active] = useState(false);
   const [timeLeft, setTimeLeft] = useState(initialTime);
@@ -29,7 +29,7 @@ const CounterGame = () => {
     }, 10);
 
     return () => clearInterval(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- timer only keys off isRunning/timeLeft; endRound omitted intentionally
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isRunning, timeLeft]);
 
   const startGame = () => {
@@ -38,7 +38,7 @@ const CounterGame = () => {
     set_round_active(false);
     setIsRunning(false);
     setTimeLeft(initialTime);
-    set_player_rounds([]); // Reset rounds when starting a new game
+    set_player_rounds([]);
   };
 
   const startRound = () => {
@@ -52,12 +52,10 @@ const CounterGame = () => {
     setIsRunning(false);
     set_round_active(false);
 
-    // Save highest count
     if (showCount > highest_count) {
       setHighest_count(showCount);
     }
 
-    // Add round score to current player rounds
     set_player_rounds((prevRounds) => [...prevRounds, showCount]);
 
     setShowCount(0);
@@ -70,10 +68,9 @@ const CounterGame = () => {
     setIsRunning(false);
     setTimeLeft(initialTime);
 
-    // Save the rounds for the current player in the leaderboard
     set_players((prevPlayers) => ({
       ...prevPlayers,
-      [show_name]: [...player_rounds], // Store all rounds for this player
+      [show_name]: [...player_rounds],
     }));
 
     set_show_name("");

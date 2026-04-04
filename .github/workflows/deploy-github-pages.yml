@@ -1,5 +1,3 @@
-# Build the Vite app and publish dist/ to GitHub Pages.
-# In repo Settings → Pages: set "Build and deployment" source to "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
