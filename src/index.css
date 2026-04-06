@@ -7,3 +7,52 @@
 :root {
   font-family: "Inter", sans-serif;
 }
+
+/* Lab 2 — Contact: grid + subgrid layout, inherited form typography */
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1em;
+  row-gap: 2rem;
+}
+
+.contact-wrapper > .contact-blurb {
+  grid-column: 2;
+  margin: 0;
+  text-align: left;
+}
+
+.contact-wrapper .contact-form {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  gap: 1em;
+}
+
+.contact-form label {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  column-gap: 1em;
+  align-items: start;
+}
+
+.contact-form label > span {
+  padding-top: 0.35em;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.contact-form button[type="submit"] {
+  grid-column: 2;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  justify-self: start;
+}

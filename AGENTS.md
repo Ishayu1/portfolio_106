@@ -103,6 +103,14 @@ postcss.config.js
 - **Route `/`:** `Hero` → `Experiences` → `Projects` → `Technologies`, plus a `Link` to `/CounterGame`.
 - **Route `/CounterGame`:** Renders `CounterGame` only (still inside the same shell / `NavBar`).
 
+### Navigation and in-page sections
+
+- **`NavBar`** is **`sticky top-0 z-50`** (same spacing **`mt-4 sm:mt-6 md:mt-8`**—no extra chrome). While the window **`scroll`** fires, the bar **`translate-y` / `opacity`** hides; after **`~220ms`** idle it shows again. Near the top (**`scrollY < 8`**) it stays visible. **Mobile menu open:** bar stays visible. **`MainApp`** uses **`overflow-x-clip`** for sticky. Sections use **`scroll-mt-*`** for in-page targets.
+- **`NavBar`** is **responsive**: from the **`md` breakpoint (768px)** up, it matches the horizontal layout (brand + section links + **Contact** + social icons). Below **`md`**, the hamburger reveals an **inline dropdown** in normal document flow (not a full-screen overlay): it sits **under the top row**, separated by **`border-neutral-900`**, with the same **neutral / cyan** treatment and a **subtle violet radial** wash matching `App.jsx`—**no modal backdrop**. **`FaBars`** / **`FaTimes`** toggle; **Escape**, **click outside** the `<nav>`, and route changes close the menu.
+- On **`/contact`**, the bar is **home-only**: **IG** and **social icons** only (no section links, no **Contact** link, no hamburger; socials stay visible on narrow viewports).
+- **IG** links to `/` and runs **`smoothScrollToTop`** (`src/utils/smoothScroll.js`): on **`/`** it scrolls the window to the top; from other routes it **`navigate("/")`** then scrolls to top after paint. Section links **Experiences**, **Projects**, **Technologies** use **`smoothScrollToElement`** on the home route. From other routes, section links **`navigate("/", { state: { scrollTo: id } })`** and **`HomeScrollToSection`** in `App.jsx` scroll after the home view mounts.
+- Sections expose ids: `#hero`, `#experiences`, `#projects`, `#technologies` on the corresponding components.
+
 ## Content and data
 
 - **Editable copy and lists** live in `src/constants/index.js`: `HERO_CONTENT`, `ABOUT_TEXT`, `EXPERIENCES`, `PROJECTS`, `CONTACT`.
@@ -114,6 +122,7 @@ postcss.config.js
 - Prefer **Tailwind** utility classes; palette leans **neutral** grays with **cyan** accents (`text-cyan-400`, `selection:bg-cyan-300`, etc.).
 - Section separation often uses `border-b border-neutral-900`.
 - Scroll-triggered sections use Framer Motion **`whileInView`** with `viewport={{ once: true }}` for enter animations.
+- **Contact** (`Contact.jsx`, route `/contact`): **`contact-wrapper`** defines **`auto` / `1fr`** columns; **`.contact-blurb`** sits in **column 2** with the fields. **`contact-form`** spans both columns and uses **`grid-template-columns: subgrid`** so labels and **Submit** share the same column tracks. **`gap: 1em`** between rows; **`font: inherit`** + **`box-sizing: border-box`** on **`input`** and **`textarea`**.
 
 ## Conventions for changes
 
@@ -136,6 +145,7 @@ postcss.config.js
 | Project cards | `constants/index.js` (`PROJECTS`), `Projects.jsx`, `assets/projects/*` |
 | Tech stack section | `Technologies.jsx`, any constants if added |
 | New page / game | `App.jsx` (`Routes`), new component under `components/` |
+| Contact form (Lab 2 grid / subgrid) | `Contact.jsx`, `index.css` (`.contact-form`) |
 | Deploy / base URL | `vite.config.js`, `package.json` `homepage` |
 
 

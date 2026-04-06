@@ -53,7 +53,10 @@ const Hero = () => {
   }, [text, isDeleting, labIdx, labs]);
 
   return (
-    <div className="flex min-h-screen items-center border-b border-neutral-900 pb-6 sm:pb-8 lg:pb-4">
+    <div
+      id="hero"
+      className="scroll-mt-24 flex min-h-screen items-center border-b border-neutral-900 pb-6 sm:scroll-mt-28 sm:pb-8 lg:pb-4"
+    >
       <div className="flex w-full flex-wrap">
         <div className="w-full lg:w-1/2">
           <div className="flex min-w-0 flex-col items-center px-4 sm:px-6 lg:items-start lg:px-10">
