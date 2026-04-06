@@ -1,11 +1,34 @@
+import { useLayoutEffect } from "react";
 import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
+import { smoothScrollToElement } from "./utils/smoothScroll";
 import Technologies from "./components/Technologies";
-import CounterGame from "./components/CounterGame"; 
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import CounterGame from "./components/CounterGame";
+import { HashRouter as Router, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 import Experiences from "./components/Experiences";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+
+const HomeScrollToSection = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const scrollToId = location.state?.scrollTo;
+
+  useLayoutEffect(() => {
+    if (!scrollToId || location.pathname !== "/") {
+      return;
+    }
+
+    const el = document.getElementById(scrollToId);
+    if (el) {
+      requestAnimationFrame(() => smoothScrollToElement(el));
+    }
+
+    navigate({ pathname: location.pathname, search: location.search }, { replace: true, state: {} });
+  }, [location.pathname, location.search, navigate, scrollToId]);
+
+  return null;
+};
 
 const App = () => {
   return (
@@ -17,12 +40,13 @@ const App = () => {
 
 const MainApp = () => {
   return (
-    <div className="overflow-x-hidden text-neutral-300 antialiased 
+    <div className="overflow-x-clip text-neutral-300 antialiased 
     selection:bg-cyan-300 selection:text-cyan-900">
       <div className="fixed top-0 -z-10 h-full w-full">
         <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
       </div>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <HomeScrollToSection />
         <NavBar />
         <Routes>
           <Route path="/" element={

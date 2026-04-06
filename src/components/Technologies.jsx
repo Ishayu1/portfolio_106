@@ -26,7 +26,10 @@ const Technologies = () => {
         { icon: <FaJava className="text-5xl text-sky-700 sm:text-6xl md:text-7xl" />, label: "Java" ,duration:1.75},
       ];
   return (
-    <div className="border-b border-neutral-800 pb-12 sm:pb-16 md:pb-24">
+    <div
+      id="technologies"
+      className="scroll-mt-24 border-b border-neutral-800 pb-12 sm:scroll-mt-28 sm:pb-16 md:pb-24"
+    >
         <motion.h1 
             whileInView={{opacity:1,y:0}}
             initial={{opacity:0,y:-100}}
