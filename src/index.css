@@ -8,7 +8,7 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Lab 2 — Contact: grid + subgrid layout, inherited form typography */
+
 .contact-wrapper {
   display: grid;
   grid-template-columns: auto 1fr;

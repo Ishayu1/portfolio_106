@@ -1,12 +1,7 @@
-/** ease-in-out quint — softer acceleration than cubic, reads smoother on long scrolls */
 function easeInOutQuint(t) {
   return t < 0.5 ? 16 * t * t * t * t * t : 1 - Math.pow(-2 * t + 2, 5) / 2;
 }
 
-/**
- * @param {HTMLElement | null} element
- * @param {{ duration?: number }} [options]
- */
 export function smoothScrollToElement(element, options = {}) {
   const duration = options.duration ?? 1250;
   if (!element || duration <= 0) {
@@ -30,10 +25,6 @@ export function smoothScrollToElement(element, options = {}) {
   requestAnimationFrame(step);
 }
 
-/**
- * Smooth scroll to the top of the document (same easing as section scroll).
- * @param {{ duration?: number }} [options]
- */
 export function smoothScrollToTop(options = {}) {
   const duration = options.duration ?? 1250;
   const startY = window.scrollY;

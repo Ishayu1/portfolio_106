@@ -21,7 +21,6 @@ const desktopLinkClass =
 const mobileLinkClass =
   "block w-full px-1 py-3.5 text-left text-base text-neutral-300 antialiased transition-colors duration-200 hover:bg-cyan-500/[0.07] hover:text-cyan-400 sm:px-0";
 
-/** Hide nav while the window is scrolling; show again after this many ms with no scroll events */
 const SCROLL_IDLE_MS = 220;
 
 const NavBar = () => {
