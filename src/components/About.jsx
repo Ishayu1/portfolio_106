@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const About = () => { 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center border-b border-neutral-900 px-4 pb-8 sm:px-6 sm:pb-12 lg:pb-4">
+    <div className="flex min-h-screen flex-col items-center justify-center border-b border-[var(--app-border)] px-4 pb-8 sm:px-6 sm:pb-12 lg:pb-4">
       <motion.h2 
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -11,7 +11,7 @@ const About = () => {
         viewport={{ once: true }}
         className="my-12 text-center text-3xl sm:my-16 sm:text-4xl md:my-20">
           About
-          <span className="text-neutral-500"> Me</span>
+          <span className="text-[var(--app-muted-2)]"> Me</span>
       </motion.h2>
 
       <div className="flex w-full flex-wrap">

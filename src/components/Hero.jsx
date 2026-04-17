@@ -55,7 +55,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="scroll-mt-24 flex min-h-screen items-center border-b border-neutral-900 pb-6 sm:scroll-mt-28 sm:pb-8 lg:pb-4"
+      className="scroll-mt-24 flex min-h-screen items-center border-b border-[var(--app-border)] pb-6 sm:scroll-mt-28 sm:pb-8 lg:pb-4"
     >
       <div className="flex w-full flex-wrap">
         <div className="w-full lg:w-1/2">
@@ -85,7 +85,7 @@ const Hero = () => {
               variants={container(0.5)}
               initial="hidden"
               animate="visible"
-              className="my-2 max-w-full py-4 text-center text-sm font-light tracking-tighter text-neutral-300 sm:py-6 sm:text-base lg:max-w-xl lg:text-left"
+              className="my-2 max-w-full py-4 text-center text-sm font-light tracking-tighter text-[var(--app-fg)] sm:py-6 sm:text-base lg:max-w-xl lg:text-left"
             >
               {HERO_CONTENT}
             </motion.p>
@@ -106,7 +106,7 @@ const Hero = () => {
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="mt-3 max-w-xs text-center text-sm text-neutral-200 sm:text-base lg:translate-x-4 xl:translate-x-10"
+              className="mt-3 max-w-xs text-center text-sm text-[var(--app-muted)] sm:text-base lg:translate-x-4 xl:translate-x-10"
             >
               Yes this is an accurate photo of me
             </motion.p>

@@ -208,12 +208,12 @@ const CounterGame = () => {
                   .map(([key, scores], index) => (
                     <li
                       key={key}
-                      className="flex flex-col gap-1 border-b border-neutral-800 pb-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+                      className="flex flex-col gap-1 border-b border-[var(--app-border)] pb-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
                     >
                       <span className="min-w-0 break-words font-semibold">
                         {index + 1}. {key}:
                       </span>
-                      <span className="shrink-0 text-neutral-400 sm:text-neutral-300">
+                      <span className="shrink-0 text-[var(--app-muted)]">
                         {average(scores).toFixed(1)} clicks per round
                       </span>
                     </li>

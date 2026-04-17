@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
     return (
-        <div id="projects" className="scroll-mt-24 border-b border-neutral-900 pb-4 sm:scroll-mt-28">
+        <div id="projects" className="scroll-mt-24 border-b border-[var(--app-border)] pb-4 sm:scroll-mt-28">
             <motion.h1 
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
@@ -42,10 +42,10 @@ const Projects = () => {
                             className="w-full min-w-0 max-w-xl mx-auto lg:mx-0 lg:w-3/4 lg:pl-4"
                         >
                             <h6 className="mb-2 text-center text-base font-semibold sm:text-lg lg:text-left">{project.title}</h6>
-                            <p className="mb-4 text-center text-sm text-neutral-400 sm:text-base lg:text-left">{project.description}</p>
+                            <p className="mb-4 text-center text-sm text-[var(--app-muted)] sm:text-base lg:text-left">{project.description}</p>
                             <div className="mb-4 flex flex-wrap justify-center gap-2 lg:justify-start">
                                 {project.technologies.map((tech, index) => (
-                                    <span key={index} className="rounded bg-neutral-900 px-2 py-1 text-xs font-medium sm:text-sm">{tech}</span>
+                                    <span key={index} className="rounded bg-[var(--app-surface-2)] px-2 py-1 text-xs font-medium text-[var(--app-fg)] sm:text-sm">{tech}</span>
                                 ))}
                             </div>
                             {project.link && (
