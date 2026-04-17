@@ -18,7 +18,7 @@ const Contact = () => {
         Contact
       </motion.h1>
       <div className="contact-wrapper">
-        <p className="contact-blurb text-sm leading-normal text-neutral-500 sm:text-base">
+        <p className="contact-blurb text-sm leading-normal text-[var(--app-muted-2)] sm:text-base">
           Submitting opens your email app with a draft addressed to me.
         </p>
 

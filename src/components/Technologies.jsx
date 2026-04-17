@@ -28,7 +28,7 @@ const Technologies = () => {
   return (
     <div
       id="technologies"
-      className="scroll-mt-24 border-b border-neutral-800 pb-12 sm:scroll-mt-28 sm:pb-16 md:pb-24"
+      className="scroll-mt-24 border-b border-[var(--app-border)] pb-12 sm:scroll-mt-28 sm:pb-16 md:pb-24"
     >
         <motion.h1 
             whileInView={{opacity:1,y:0}}
@@ -46,7 +46,7 @@ const Technologies = () => {
             variants={iconVariants(tech.duration)}
             initial="initial"
             animate="animate"
-            key={index} className="rounded-xl border-2 border-neutral-800 p-3 sm:rounded-2xl sm:border-4 sm:p-4">
+            key={index} className="rounded-xl border-2 border-[var(--app-border)] p-3 sm:rounded-2xl sm:border-4 sm:p-4">
             {tech.icon}
           </motion.div>
         ))}

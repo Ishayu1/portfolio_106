@@ -3,7 +3,7 @@ import { EXPERIENCES } from "../constants";
 
 const Experiences = () => {
   return (
-    <div id="experiences" className="scroll-mt-24 border-b border-neutral-900 pb-4 sm:scroll-mt-28">
+    <div id="experiences" className="scroll-mt-24 border-b border-[var(--app-border)] pb-4 sm:scroll-mt-28">
       <motion.h1
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
@@ -40,19 +40,19 @@ const Experiences = () => {
                 </p>
                 <h2 className="mb-2 text-base font-semibold sm:text-lg">
                   {experience.role}
-                  <span className="font-normal text-neutral-500">
+                  <span className="font-normal text-[var(--app-muted-2)]">
                     {" "}
                     — {experience.company}
                   </span>
                 </h2>
-                <p className="mb-4 text-sm text-neutral-400 sm:text-base">
+                <p className="mb-4 text-sm text-[var(--app-muted)] sm:text-base">
                   {experience.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {experience.technologies.map((tech, tIdx) => (
                     <span
                       key={tIdx}
-                      className="rounded bg-neutral-900 px-2 py-1 text-xs font-medium text-purple-300 sm:text-sm"
+                      className="rounded bg-[var(--app-surface-2)] px-2 py-1 text-xs font-medium text-purple-300 sm:text-sm"
                     >
                       {tech}
                     </span>
@@ -62,9 +62,9 @@ const Experiences = () => {
 
               <div className="hidden w-44 shrink-0 flex-row items-start gap-0 lg:flex">
                 <div className="relative flex w-5 shrink-0 justify-center pt-1">
-                  <div className="relative z-10 h-3.5 w-3.5 shrink-0 rounded-full border-2 border-cyan-400 bg-neutral-950 shadow-[0_0_14px_rgba(34,211,238,0.35)]" />
+                  <div className="relative z-10 h-3.5 w-3.5 shrink-0 rounded-full border-2 border-cyan-400 bg-[var(--app-bg)] shadow-[0_0_14px_rgba(34,211,238,0.35)]" />
                 </div>
-                <p className="min-w-0 flex-1 pl-3 pt-0.5 text-right text-sm leading-snug text-neutral-400">
+                <p className="min-w-0 flex-1 pl-3 pt-0.5 text-right text-sm leading-snug text-[var(--app-muted)]">
                   {experience.year}
                 </p>
               </div>
