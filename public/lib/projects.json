@@ -1,0 +1,98 @@
+[
+  {
+    "title": "TritonBall website",
+    "year": 2025,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Led development of the website for a new sports analytics org at UCSD (TritonBall). Reviewed PRs, shipped deployments, and built a clean Tailwind UI.",
+    "technologies": ["React", "TypeScript", "Tailwind", "Git"],
+    "link": "https://tritonball.org/"
+  },
+  {
+    "title": "Sports Predictive Analysis Research Paper",
+    "year": 2022,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Co-authored a paper predicting cricket player ratings using 1,700+ player records and compared multiple ML models (R² ≈ 0.84).",
+    "technologies": ["Python", "Pandas", "Matplotlib", "Machine Learning"],
+    "link": "https://wp0.vanderbilt.edu/youngscientistjournal/article/determining-the-value-of-a-cricket-player-does-bowling-ability-have-a-greater-effect-on-the-rating-of-a-cricket-player-than-batting-ability"
+  },
+  {
+    "title": "Specialized Data Analysis Projects",
+    "year": 2023,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "A collection of applied projects including car price prediction, COVID-19 statistical analysis, and life expectancy modeling.",
+    "technologies": ["Python", "Scikit-learn", "Data Science"],
+    "link": ""
+  },
+  {
+    "title": "Dubai College Cricket Scoring Web App",
+    "year": 2024,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Built a web app for online cricket scoring and analytics, replacing an older manual workflow for teams and coaches.",
+    "technologies": ["Flask", "SQL", "JavaScript", "Pandas"],
+    "link": "https://ishayu21.pythonanywhere.com"
+  },
+  {
+    "title": "EEG Letter Recognition Pipeline",
+    "year": 2025,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "End-to-end pipeline turning raw EEG into recognized handwritten letters using deep learning + classical ML.",
+    "technologies": ["PyTorch", "MNE", "SVM"],
+    "link": ""
+  },
+  {
+    "title": "Agentic Model Recommender (Intern Project)",
+    "year": 2025,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Built a tool-using LLM workflow that recommends ML models for tabular/NLP/vision tasks with schema validation and recovery.",
+    "technologies": ["Python", "LLMs", "Hugging Face"],
+    "link": ""
+  },
+  {
+    "title": "Portfolio Website (React + Vite)",
+    "year": 2026,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Single-page portfolio with animated sections, responsive navbar, theme switcher, and GitHub Pages deployment.",
+    "technologies": ["React", "Vite", "Tailwind"],
+    "link": ""
+  },
+  {
+    "title": "Data Dashboard Prototype",
+    "year": 2024,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Prototype dashboard for exploring a dataset with filters, derived metrics, and responsive layout.",
+    "technologies": ["JavaScript", "CSS", "Data Viz"],
+    "link": ""
+  },
+  {
+    "title": "API Data Explorer",
+    "year": 2026,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Small app that fetches API data and presents it with loading/error states.",
+    "technologies": ["Fetch API", "Async/Await"],
+    "link": ""
+  },
+  {
+    "title": "Visualization Mini-Project",
+    "year": 2023,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "Mini visualization project exploring patterns in a dataset using charts and annotations.",
+    "technologies": ["JavaScript", "SVG"],
+    "link": ""
+  },
+  {
+    "title": "UI Component Library Sketch",
+    "year": 2024,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "A small set of reusable UI components (buttons, alerts, cards) with consistent styling.",
+    "technologies": ["React", "Design Systems"],
+    "link": ""
+  },
+  {
+    "title": "Course Lab Collection",
+    "year": 2026,
+    "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+    "description": "A curated set of class labs and experiments demonstrating DOM manipulation, theming, and dynamic data rendering.",
+    "technologies": ["JavaScript", "Web"],
+    "link": ""
+  }
+]
