@@ -3,7 +3,9 @@ import { useProjects } from "../hooks/useProjects";
 
 const LatestProjects = () => {
   const { projects, loading, error } = useProjects();
-  const latest = projects.slice(0, 3);
+  const latest = [...projects]
+    .sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0))
+    .slice(0, 3);
 
   return (
     <section className="border-b border-[var(--app-border)] py-10 sm:py-14">

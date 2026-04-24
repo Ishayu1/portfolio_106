@@ -182,7 +182,7 @@ const NavBar = () => {
   return (
     <nav
       ref={navRef}
-      className={`sticky top-0 z-50 mt-4 transition-[transform,opacity] duration-300 ease-out sm:mt-6 md:mt-8 ${
+      className={`z-50 mt-4 transition-[transform,opacity] duration-300 ease-out sm:mt-6 md:mt-8 ${
         hideWhileScrolling
           ? "pointer-events-none -translate-y-full opacity-0"
           : "translate-y-0 opacity-100"

@@ -3,6 +3,9 @@ import { useProjects } from "../hooks/useProjects";
 
 const Projects = () => {
     const { projects, count, loading, error } = useProjects();
+    const sortedProjects = [...projects].sort(
+        (a, b) => (Number(b.year) || 0) - (Number(a.year) || 0)
+    );
 
     return (
         <div id="projects" className="scroll-mt-24 border-b border-[var(--app-border)] pb-4 sm:scroll-mt-28">
@@ -31,7 +34,7 @@ const Projects = () => {
                     <p className="mx-auto max-w-2xl text-center text-sm text-[var(--app-muted)] sm:text-base">
                         No projects found.
                     </p>
-                ) : projects.map((project, index) => (
+                ) : sortedProjects.map((project, index) => (
                     <div
                         key={index}
                         className="mb-10 flex flex-col flex-wrap items-center gap-6 sm:mb-12 lg:flex-row lg:items-start lg:justify-center lg:gap-8"
