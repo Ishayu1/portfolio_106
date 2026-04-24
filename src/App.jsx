@@ -8,6 +8,8 @@ import { HashRouter as Router, Routes, Route, Link, useLocation, useNavigate } f
 import Experiences from "./components/Experiences";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import LatestProjects from "./components/LatestProjects";
+import GitHubStats from "./components/GitHubStats";
 
 const HomeScrollToSection = () => {
   const location = useLocation();
@@ -53,7 +55,9 @@ const MainApp = () => {
           <Route path="/" element={
             <>
               <Hero />
+              <GitHubStats />
               <Experiences />
+              <LatestProjects />
               <Projects/>
               <Technologies />
               <div className="py-8 pb-12 text-center sm:py-10 sm:pb-16">

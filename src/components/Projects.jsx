@@ -1,7 +1,9 @@
-import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import { useProjects } from "../hooks/useProjects";
 
 const Projects = () => {
+    const { projects, count, loading, error } = useProjects();
+
     return (
         <div id="projects" className="scroll-mt-24 border-b border-[var(--app-border)] pb-4 sm:scroll-mt-28">
             <motion.h1 
@@ -11,10 +13,25 @@ const Projects = () => {
                 viewport={{ once: true }}
                 className="my-12 text-center text-3xl sm:my-16 sm:text-4xl md:my-20"
             >
-                Projects
+                Projects{" "}
+                <span className="text-base font-normal text-[var(--app-muted)] sm:text-lg">
+                    ({count})
+                </span>
             </motion.h1>
             <div>
-                {PROJECTS.map((project, index) => (
+                {loading ? (
+                    <p className="mx-auto max-w-2xl text-center text-sm text-[var(--app-muted)] sm:text-base">
+                        Loading projects…
+                    </p>
+                ) : error ? (
+                    <p className="mx-auto max-w-2xl text-center text-sm text-[var(--app-muted)] sm:text-base">
+                        Couldn’t load projects right now.
+                    </p>
+                ) : projects.length === 0 ? (
+                    <p className="mx-auto max-w-2xl text-center text-sm text-[var(--app-muted)] sm:text-base">
+                        No projects found.
+                    </p>
+                ) : projects.map((project, index) => (
                     <div
                         key={index}
                         className="mb-10 flex flex-col flex-wrap items-center gap-6 sm:mb-12 lg:flex-row lg:items-start lg:justify-center lg:gap-8"
@@ -41,14 +58,21 @@ const Projects = () => {
                             viewport={{ once: true }} 
                             className="w-full min-w-0 max-w-xl mx-auto lg:mx-0 lg:w-3/4 lg:pl-4"
                         >
-                            <h6 className="mb-2 text-center text-base font-semibold sm:text-lg lg:text-left">{project.title}</h6>
+                            <h6 className="mb-2 text-center text-base font-semibold sm:text-lg lg:text-left">
+                                {project.title}{" "}
+                                {project.year ? (
+                                    <span className="font-normal text-[var(--app-muted)]">
+                                        ({project.year})
+                                    </span>
+                                ) : null}
+                            </h6>
                             <p className="mb-4 text-center text-sm text-[var(--app-muted)] sm:text-base lg:text-left">{project.description}</p>
                             <div className="mb-4 flex flex-wrap justify-center gap-2 lg:justify-start">
-                                {project.technologies.map((tech, index) => (
+                                {project.technologies?.map((tech, index) => (
                                     <span key={index} className="rounded bg-[var(--app-surface-2)] px-2 py-1 text-xs font-medium text-[var(--app-fg)] sm:text-sm">{tech}</span>
                                 ))}
                             </div>
-                            {project.link && (
+                            {project.link ? (
                                 <motion.a
                                     whileInView={{ opacity: 1, y: 0 }}
                                     initial={{ opacity: 0, y: 20 }}
@@ -60,7 +84,7 @@ const Projects = () => {
                                 >
                                     View Project
                                 </motion.a>
-                            )}
+                            ) : null}
                         </motion.div>
                     </div>
                 ))}
