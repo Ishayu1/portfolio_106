@@ -89,6 +89,105 @@ select {
   font: inherit;
 }
 
+.projects-pie-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .projects-pie-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 0.5rem;
+  overflow: visible;
+}
+
+#projects-pie-plot path {
+  transition: opacity 300ms, transform 150ms;
+  transform-origin: 0 0;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+#projects-pie-plot path:focus-visible {
+  outline: none;
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.legend {
+  list-style: none;
+  padding: 0.75rem;
+  margin: 0;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface);
+  border-radius: 0.75rem;
+  display: grid;
+  gap: 0.5rem 0.75rem;
+  width: 100%;
+  max-width: 32rem;
+  grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+}
+
+.legend-item {
+  display: flex;
+}
+
+.legend-button {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid transparent;
+  color: var(--app-fg);
+  background: transparent;
+}
+
+.legend-button:hover {
+  background: var(--app-surface-2);
+}
+
+.legend-button:focus-visible {
+  outline: none;
+  border-color: color-mix(in oklch, var(--app-fg), transparent 70%);
+}
+
+.swatch {
+  display: inline-block;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 0.25rem;
+  background: var(--color);
+  flex: 0 0 auto;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+}
+
+.selected.legend-item .legend-button {
+  border-color: var(--app-border);
+  background: var(--app-surface-2);
+}
+
+.selected:is(path) {
+  fill: var(--color);
+}
+
 .contact-form button[type="submit"] {
   grid-column: 2;
   box-sizing: border-box;
