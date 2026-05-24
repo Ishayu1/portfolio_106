@@ -178,6 +178,7 @@ const NavBar = () => {
 
   const isHomeRoute = location.pathname === "/";
   const isGameRoute = location.pathname === "/CounterGame";
+  const isMetaRoute = location.pathname === "/meta";
 
   return (
     <nav
@@ -219,6 +220,13 @@ const NavBar = () => {
                 aria-current={isGameRoute ? "page" : undefined}
               >
                 Counter Game
+              </Link>
+              <Link
+                to="/meta"
+                className={routeLinkClass(isMetaRoute)}
+                aria-current={isMetaRoute ? "page" : undefined}
+              >
+                Meta
               </Link>
               <Link to="/contact" className={desktopLinkClass}>
                 Contact
@@ -333,6 +341,16 @@ const NavBar = () => {
                     onClick={() => setMenuOpen(false)}
                   >
                     Counter Game
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/meta"
+                    className={mobileLinkClass}
+                    aria-current={isMetaRoute ? "page" : undefined}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Meta
                   </Link>
                 </li>
                 <li>

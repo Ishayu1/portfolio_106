@@ -195,3 +195,234 @@ select {
   max-width: 100%;
   justify-self: start;
 }
+
+/* Lab 6: meta-analysis page (scoped so pie chart circles are unaffected) */
+.meta-stats.stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+  max-width: 42rem;
+}
+
+.meta-stats.stats dt {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--app-muted);
+}
+
+.meta-stats.stats dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.meta-gridlines line {
+  stroke: var(--app-border);
+  stroke-opacity: 0.6;
+}
+
+.meta-gridlines path {
+  display: none;
+}
+
+.meta-chart-svg .domain {
+  stroke: var(--app-muted-2);
+}
+
+.meta-chart-svg .tick line {
+  stroke: var(--app-muted-2);
+}
+
+.meta-chart-svg .tick text {
+  fill: var(--app-muted);
+  font-size: 11px;
+}
+
+.meta-commit-dot {
+  transform-origin: center;
+  transform-box: fill-box;
+  transition:
+    cx 300ms ease,
+    cy 300ms ease,
+    r 300ms ease,
+    transform 200ms ease,
+    fill-opacity 200ms ease;
+}
+
+@starting-style {
+  .meta-commit-dot {
+    r: 0;
+  }
+}
+
+.meta-commit-dot:hover {
+  transform: scale(1.12);
+}
+
+.meta-commit-dot.selected {
+  fill: #ff6b6b !important;
+}
+
+.meta-chart-svg .selection {
+  fill-opacity: 0.12;
+  stroke: var(--app-fg);
+  stroke-opacity: 0.45;
+  stroke-dasharray: 5 3;
+}
+
+@keyframes meta-marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.meta-chart-svg .selection {
+  animation: meta-marching-ants 2s linear infinite;
+}
+
+dl.meta-tooltip.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  row-gap: 0.35rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  transition-duration: 200ms;
+  transition-property: opacity, visibility;
+}
+
+dl.meta-tooltip.info dt {
+  margin: 0;
+  color: var(--app-muted);
+}
+
+dl.meta-tooltip.info dd {
+  margin: 0;
+}
+
+dl.meta-tooltip.tooltip {
+  position: fixed;
+  z-index: 100;
+  max-width: min(22rem, calc(100vw - 2rem));
+  pointer-events: none;
+  border-radius: 0.5rem;
+  border: 1px solid var(--app-border);
+  background: color-mix(in oklch, var(--app-surface) 92%, transparent);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+dl.meta-tooltip.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+:root[data-theme="light"] dl.meta-tooltip.tooltip {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Lab 8: meta scrollytelling, unit visualization */
+.meta-scrolly {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.meta-scrolly > * {
+  flex: 1;
+  min-width: 0;
+}
+
+.meta-scatter-story {
+  position: relative;
+}
+
+.meta-step {
+  margin-bottom: 35vh;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--app-fg);
+}
+
+.meta-step:last-child {
+  margin-bottom: 12vh;
+}
+
+.meta-step a {
+  color: rgb(34 211 238);
+  text-decoration: underline;
+}
+
+.meta-scatter-sticky {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 70vh;
+  overflow: auto;
+}
+
+@media (max-width: 767px) {
+  .meta-scrolly {
+    flex-direction: column;
+  }
+
+  .meta-scatter-sticky {
+    position: relative;
+    height: auto;
+    order: -1;
+  }
+
+  .meta-step {
+    margin-bottom: 2rem;
+  }
+}
+
+.meta-files {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 0.75rem 1rem;
+  max-width: 56rem;
+}
+
+.meta-files > .file-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.meta-files dt {
+  grid-column: 1;
+  margin: 0;
+}
+
+.meta-files dt code {
+  font-size: 0.85rem;
+}
+
+.meta-files dt small {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+.meta-files dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.35em;
+  margin: 0;
+}
+
+.meta-files .loc {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: var(--color, steelblue);
+  border-radius: 50%;
+}
