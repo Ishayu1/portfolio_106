@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import LatestProjects from "./components/LatestProjects";
 import GitHubStats from "./components/GitHubStats";
+import Meta from "./components/Meta";
 
 const HomeScrollToSection = () => {
   const location = useLocation();
@@ -71,6 +72,7 @@ const MainApp = () => {
             </>
           } />
           <Route path="/CounterGame" element={<CounterGame />} />
+          <Route path="/meta" element={<Meta />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
